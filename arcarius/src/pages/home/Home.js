@@ -13,11 +13,14 @@ export default function Home() {
   const { documents, error } = useCollection(
     'transactions', ["uid", "==", user.uid], ['createdAt', 'desc']
   )
+  console.log(documents.length)
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
+        <h2>Dashboard</h2>
+        {!documents.length && <p className={styles.container}>No Transactions</p>}
         {documents && <TransactionList transactions={documents} />}
       </div>
       <div className={styles.sidebar}>
