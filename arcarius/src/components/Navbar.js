@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useLogout } from '../hooks/useLogout'
+import logo from "./icon3.png"
 
 // styles
 import styles from './Navbar.module.css'
@@ -12,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <li className={styles.title}>Arcarius</li>
+        <li className={styles.title}><div><img src={logo} style={{width:"50px"}}></img></div></li>
         
         {!user && (
           <>
